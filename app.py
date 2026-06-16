@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
