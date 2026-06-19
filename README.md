@@ -1,32 +1,30 @@
-🧠 Stroke Prediction System
+🧠 Stroke Risk Prediction System
 
-Overview:
- 
-The Stroke Prediction System is a Machine Learning project that predicts whether a person is at risk of stroke based on health and lifestyle factors.
+# Overview
+
+The Stroke Risk Prediction System is a Machine Learning project that predicts whether a person is at risk of stroke based on symptoms and age.
 
 The model is deployed using FastAPI and provides predictions through a REST API.
 
 
-
-Features
+# Features
 
 ✅ Stroke Risk Prediction
 
 ✅ Probability Score Prediction
 
-✅ Missing Value Handling
+✅ Duplicate Record Removal
 
 ✅ Feature Scaling
 
-✅ Categorical Feature Encoding
+✅ Model Comparison and Evaluation
 
 ✅ FastAPI REST API
 
 ✅ Interactive Swagger Documentation
 
 
-
-Technologies Used
+# Technologies Used
 
 * Python
 * Pandas
@@ -38,64 +36,79 @@ Technologies Used
 * Pydantic
 
 
- Machine Learning Workflow
+# Machine Learning Workflow
 
-Data Preprocessing
+# Data Preprocessing
 
-* Missing Value Imputation using Median Strategy for Numerical Features
-* Missing Value Imputation using Most Frequent Strategy for Categorical Features
-* RobustScaler for Numerical Features
-* OneHotEncoder for Categorical Features
+* Duplicate Record Removal
+* Feature Selection
+* Train-Test Split
+* StandardScaler for Age Feature
+* Pipeline-Based Model Training
 
-Model
+# Models Evaluated
+
 * Logistic Regression
-* Class Weight = Balanced
+* Decision Tree Classifier
+* Random Forest Classifier
+* K-Nearest Neighbors (KNN)
+* Support Vector Machine (SVM)
+
+# Final Model
+
+* Logistic Regression
 * Pipeline-Based Training and Prediction
 
 
+# Model Performance
 
-Model Performance
+# Logistic Regression
 
-* Accuracy: 74.5%
-* ROC-AUC Score: 0.82
+* Accuracy: 100%
+* ROC-AUC Score: 1.00
 
-The model was optimized for handling imbalanced stroke data by using class weight balancing.
-
-
-
-Input Features
-
-* age
-* hypertension
-* heart_disease
-* avg_glucose_level
-* bmi
-* avg_RestingBP
-* heart_cholesterol
-* avg_MaxHR
-* avg_Oldpeak
-* heart_disease_rate
-* gender
-* ever_married
-* work_type
-* Residence_type
-* smoking_status
-* smoke_flag
-* alco_flag
+The model was trained and evaluated using a train-test split approach and integrated with a preprocessing pipeline.
 
 
+# Input Features
 
-API Endpoints
+* Chest Pain
+* Shortness of Breath
+* Irregular Heartbeat
+* Fatigue & Weakness
+* Dizziness
+* Swelling (Edema)
+* Pain in Neck/Jaw/Shoulder/Back
+* Excessive Sweating
+* Persistent Cough
+* Nausea/Vomiting
+* High Blood Pressure
+* Chest Discomfort (Activity)
+* Cold Hands/Feet
+* Snoring/Sleep Apnea
+* Anxiety/Feeling of Doom
+* Age
 
-GET /
 
-Redirects to Swagger API Documentation.
+# Target Variable
 
-GET /health
+At Risk (Binary)
+
+* 0 = Low Stroke Risk
+* 1 = High Stroke Risk
+
+
+# API Endpoints
+
+# GET /
+
+Returns project information.
+
+# GET /health
 
 Returns API health status.
 
-POST /stroke-prediction
+# POST /stroke-prediction
 
 Predicts stroke risk and returns:
 
@@ -104,59 +117,53 @@ Predicts stroke risk and returns:
 * Probability Score
 
 
+# Project Structure
 
-Project Structure
-
-Stroke-Prediction-System/
+Stroke-Risk-Prediction-System/
 
 ├── app.py
 
 ├── stroke_prediction_model.pkl
 
-├── stroke_final.csv
+├── stroke_cleaned.csv
 
 ├── requirements.txt
 
 └── README.md
 
 
-
-Installation
+# Installation
 
 Install required packages:
 
 pip install -r requirements.txt
 
 
-
-Run the Application
+# Run the Application
 
 Start the FastAPI server:
-
 uvicorn app:app --reload
 
 
-
-Open API Documentation
+# Open API Documentation
 
 http://127.0.0.1:8000/docs
 
 
 
-Example Response
+# Example Response
 
 {
-"prediction": 1,
-"risk_level": "High Stroke Risk",
-"probability": 57.35
+  "prediction": 1,
+  "risk_level": "High Stroke Risk",
+  "stroke_probability_percent": 96.42
 }
 
 
-
-Author
+# Author
 
 Jayasri Ramineedi
 
-Aspiring Data Scientist | Machine Learning Enthusiast
+Aspiring AI & Machine Learning Engineer
 
 Python | Scikit-Learn | FastAPI | Machine Learning
