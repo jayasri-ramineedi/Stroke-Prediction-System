@@ -186,6 +186,17 @@ Stroke Probability:0.0%
 ✅ Low Stroke Risk (0.0%)
 
 
+# Live Demo
+
+# FastAPI (Render)
+
+https://stroke-prediction-system-lbqb.onrender.com/docs
+
+# Streamlit (Community Cloud)
+
+https://stroke-prediction-system-gsp7fyxw3fv32c7tmz3wbr.streamlit.app/
+
+
 # Author
 
 Jayasri Ramineedi
