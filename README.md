@@ -6,6 +6,8 @@ The Stroke Risk Prediction System is a Machine Learning project that predicts wh
 
 The model is deployed using FastAPI and provides predictions through a REST API.
 
+A Streamlit web application is integrated with the FastAPI API to provide an interactive user interface for real-time stroke risk prediction.
+
 
 # Features
 
@@ -21,6 +23,8 @@ The model is deployed using FastAPI and provides predictions through a REST API.
 
 ✅ FastAPI REST API
 
+✅ Streamlit Web Application
+
 ✅ Interactive Swagger Documentation
 
 
@@ -31,6 +35,7 @@ The model is deployed using FastAPI and provides predictions through a REST API.
 * NumPy
 * Scikit-Learn
 * FastAPI
+* Streamlit
 * Uvicorn
 * Joblib
 * Pydantic
@@ -122,13 +127,10 @@ Predicts stroke risk and returns:
 Stroke-Risk-Prediction-System/
 
 ├── app.py
-
+├── streamlit_app.py
 ├── stroke_prediction_model.pkl
-
 ├── stroke_cleaned.csv
-
 ├── requirements.txt
-
 └── README.md
 
 
@@ -150,7 +152,6 @@ uvicorn app:app --reload
 http://127.0.0.1:8000/docs
 
 
-
 # Example Response
 
 {
@@ -158,6 +159,31 @@ http://127.0.0.1:8000/docs
   "risk_level": "High Stroke Risk",
   "stroke_probability_percent": 96.42
 }
+
+
+# Run the Streamlit Application
+
+Start the Streamlit application:
+streamlit run streamlit_app.py
+
+# Open Streamlit Application
+
+http://localhost:8501
+
+
+# Example Output (Streamlit)
+
+Prediction Completed Successfully
+
+📊 Prediction Results
+
+Prediction:0
+
+Risk Level:Low Stroke Risk
+
+Stroke Probability:0.0%
+
+✅ Low Stroke Risk (0.0%)
 
 
 # Author
