@@ -1,9 +1,8 @@
 import streamlit as st
 import requests
 import json
-# ---------------------------
+
 # Page Configuration
-# ---------------------------
 
 st.set_page_config(
     page_title="Stroke Risk Prediction System",
@@ -11,23 +10,18 @@ st.set_page_config(
     layout="wide"
 )
 
-# ---------------------------
 # Title
-# ---------------------------
 
 st.title("🧠 Stroke Risk Prediction System")
 st.markdown(
     "Enter patient details below to predict stroke risk using the deployed Machine Learning model."
 )
 
-# ---------------------------
 # API URL
-# ---------------------------
 
 API_URL = "https://stroke-prediction-system-lbqb.onrender.com/stroke-prediction"
-# ---------------------------
+
 # Input Form
-# ---------------------------
 
 col1, col2 = st.columns(2)
 
@@ -62,9 +56,7 @@ with col2:
         value=30
     )
 
-# ---------------------------
 # Prediction Button
-# ---------------------------
 
 if st.button("🔍 Predict Stroke Risk"):
 
@@ -148,9 +140,7 @@ if st.button("🔍 Predict Stroke Risk"):
             f"Connection Error: {e}"
         )
 
-# ---------------------------
 # Footer
-# ---------------------------
 
 st.markdown("---")
 st.caption(
